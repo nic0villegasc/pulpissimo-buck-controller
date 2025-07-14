@@ -48,10 +48,10 @@ module pulpissimo #(
   inout wire pad_i2c0_sda,
   inout wire pad_i2c0_scl,
 
-  inout wire pad_i2s0_sck,
-  inout wire pad_i2s0_ws,
-  inout wire pad_i2s0_sdi,
-  inout wire pad_i2s1_sdi,
+  // inout wire pad_i2s0_sck,
+  // inout wire pad_i2s0_ws,
+  // inout wire pad_i2s0_sdi,
+  // inout wire pad_i2s1_sdi,
 
   inout wire pad_reset_n,
   inout wire pad_bootsel0,
@@ -115,10 +115,10 @@ module pulpissimo #(
   logic s_out_sdio_data3;
   logic s_out_i2c0_sda;
   logic s_out_i2c0_scl;
-  logic s_out_i2s0_sck;
-  logic s_out_i2s0_ws;
-  logic s_out_i2s0_sdi;
-  logic s_out_i2s1_sdi;
+  // logic s_out_i2s0_sck;
+  // logic s_out_i2s0_ws;
+  // logic s_out_i2s0_sdi;
+  // logic s_out_i2s1_sdi;
 
   logic s_in_spim_sdio0;
   logic s_in_spim_sdio1;
@@ -148,10 +148,10 @@ module pulpissimo #(
   logic s_in_sdio_data3;
   logic s_in_i2c0_sda;
   logic s_in_i2c0_scl;
-  logic s_in_i2s0_sck;
-  logic s_in_i2s0_ws;
-  logic s_in_i2s0_sdi;
-  logic s_in_i2s1_sdi;
+  // logic s_in_i2s0_sck;
+  // logic s_in_i2s0_ws;
+  // logic s_in_i2s0_sdi;
+  // logic s_in_i2s1_sdi;
 
   logic s_oe_spim_sdio0;
   logic s_oe_spim_sdio1;
@@ -181,10 +181,10 @@ module pulpissimo #(
   logic s_oe_sdio_data3;
   logic s_oe_i2c0_sda;
   logic s_oe_i2c0_scl;
-  logic s_oe_i2s0_sck;
-  logic s_oe_i2s0_ws;
-  logic s_oe_i2s0_sdi;
-  logic s_oe_i2s1_sdi;
+  // logic s_oe_i2s0_sck;
+  // logic s_oe_i2s0_ws;
+  // logic s_oe_i2s0_sdi;
+  // logic s_oe_i2s1_sdi;
 
   //
   // OTHER PAD FRAME SIGNALS
@@ -252,18 +252,18 @@ module pulpissimo #(
   logic                        s_i2c1_sda_out;
   logic                        s_i2c1_sda_in;
   logic                        s_i2c1_sda_oe;
-  logic                        s_i2s_sd0_in;
-  logic                        s_i2s_sd1_in;
-  logic                        s_i2s_sck_in;
-  logic                        s_i2s_ws_in;
-  logic                        s_i2s_sck0_out;
-  logic                        s_i2s_ws0_out;
-  logic [1:0]                  s_i2s_mode0_out;
-  logic                        s_i2s_sck1_out;
-  logic                        s_i2s_ws1_out;
-  logic [1:0]                  s_i2s_mode1_out;
-  logic                        s_i2s_slave_sck_oe;
-  logic                        s_i2s_slave_ws_oe;
+  // logic                        s_i2s_sd0_in;
+  // logic                        s_i2s_sd1_in;
+  // logic                        s_i2s_sck_in;
+  // logic                        s_i2s_ws_in;
+  // logic                        s_i2s_sck0_out;
+  // logic                        s_i2s_ws0_out;
+  // logic [1:0]                  s_i2s_mode0_out;
+  // logic                        s_i2s_sck1_out;
+  // logic                        s_i2s_ws1_out;
+  // logic [1:0]                  s_i2s_mode1_out;
+  // logic                        s_i2s_slave_sck_oe;
+  // logic                        s_i2s_slave_ws_oe;
   logic                        s_spi_master0_csn0;
   logic                        s_spi_master0_csn1;
   logic                        s_spi_master0_sck;
@@ -393,10 +393,10 @@ module pulpissimo #(
     .oe_sdio_data1_i       ( s_oe_sdio_data1        ),
     .oe_sdio_data2_i       ( s_oe_sdio_data2        ),
     .oe_sdio_data3_i       ( s_oe_sdio_data3        ),
-    .oe_i2s0_sck_i         ( s_oe_i2s0_sck          ),
-    .oe_i2s0_ws_i          ( s_oe_i2s0_ws           ),
-    .oe_i2s0_sdi_i         ( s_oe_i2s0_sdi          ),
-    .oe_i2s1_sdi_i         ( s_oe_i2s1_sdi          ),
+    // .oe_i2s0_sck_i         ( s_oe_i2s0_sck          ),
+    // .oe_i2s0_ws_i          ( s_oe_i2s0_ws           ),
+    // .oe_i2s0_sdi_i         ( s_oe_i2s0_sdi          ),
+    // .oe_i2s1_sdi_i         ( s_oe_i2s1_sdi          ),
     .oe_cam_pclk_i         ( s_oe_cam_pclk          ),
     .oe_cam_hsync_i        ( s_oe_cam_hsync         ),
     .oe_cam_data0_i        ( s_oe_cam_data0         ),
@@ -426,10 +426,10 @@ module pulpissimo #(
     .out_sdio_data1_i      ( s_out_sdio_data1       ),
     .out_sdio_data2_i      ( s_out_sdio_data2       ),
     .out_sdio_data3_i      ( s_out_sdio_data3       ),
-    .out_i2s0_sck_i        ( s_out_i2s0_sck         ),
-    .out_i2s0_ws_i         ( s_out_i2s0_ws          ),
-    .out_i2s0_sdi_i        ( s_out_i2s0_sdi         ),
-    .out_i2s1_sdi_i        ( s_out_i2s1_sdi         ),
+    // .out_i2s0_sck_i        ( s_out_i2s0_sck         ),
+    // .out_i2s0_ws_i         ( s_out_i2s0_ws          ),
+    // .out_i2s0_sdi_i        ( s_out_i2s0_sdi         ),
+    // .out_i2s1_sdi_i        ( s_out_i2s1_sdi         ),
     .out_cam_pclk_i        ( s_out_cam_pclk         ),
     .out_cam_hsync_i       ( s_out_cam_hsync        ),
     .out_cam_data0_i       ( s_out_cam_data0        ),
@@ -459,10 +459,10 @@ module pulpissimo #(
     .in_sdio_data1_o       ( s_in_sdio_data1        ),
     .in_sdio_data2_o       ( s_in_sdio_data2        ),
     .in_sdio_data3_o       ( s_in_sdio_data3        ),
-    .in_i2s0_sck_o         ( s_in_i2s0_sck          ),
-    .in_i2s0_ws_o          ( s_in_i2s0_ws           ),
-    .in_i2s0_sdi_o         ( s_in_i2s0_sdi          ),
-    .in_i2s1_sdi_o         ( s_in_i2s1_sdi          ),
+    // .in_i2s0_sck_o         ( s_in_i2s0_sck          ),
+    // .in_i2s0_ws_o          ( s_in_i2s0_ws           ),
+    // .in_i2s0_sdi_o         ( s_in_i2s0_sdi          ),
+    // .in_i2s1_sdi_o         ( s_in_i2s1_sdi          ),
     .in_cam_pclk_o         ( s_in_cam_pclk          ),
     .in_cam_hsync_o        ( s_in_cam_hsync         ),
     .in_cam_data0_o        ( s_in_cam_data0         ),
@@ -494,10 +494,10 @@ module pulpissimo #(
     .pad_sdio_data1        ( pad_sdio_data1         ),
     .pad_sdio_data2        ( pad_sdio_data2         ),
     .pad_sdio_data3        ( pad_sdio_data3         ),
-    .pad_i2s0_sck          ( pad_i2s0_sck           ),
-    .pad_i2s0_ws           ( pad_i2s0_ws            ),
-    .pad_i2s0_sdi          ( pad_i2s0_sdi           ),
-    .pad_i2s1_sdi          ( pad_i2s1_sdi           ),
+    // .pad_i2s0_sck          ( pad_i2s0_sck           ),
+    // .pad_i2s0_ws           ( pad_i2s0_ws            ),
+    // .pad_i2s0_sdi          ( pad_i2s0_sdi           ),
+    // .pad_i2s1_sdi          ( pad_i2s1_sdi           ),
     .pad_cam_pclk          ( pad_cam_pclk           ),
     .pad_cam_hsync         ( pad_cam_hsync          ),
     .pad_cam_data0         ( pad_cam_data0          ),
@@ -561,14 +561,14 @@ module pulpissimo #(
         .i2c_sda_in_o               ( s_i2c_sda_in                ),
         .i2c_sda_oe_i               ( s_i2c_sda_oe                ),
 
-        .i2s_slave_sd0_o            ( s_i2s_sd0_in                ),
-        .i2s_slave_sd1_o            ( s_i2s_sd1_in                ),
-        .i2s_slave_ws_o             ( s_i2s_ws_in                 ),
-        .i2s_slave_ws_i             ( s_i2s_ws0_out               ),
-        .i2s_slave_ws_oe            ( s_i2s_slave_ws_oe           ),
-        .i2s_slave_sck_o            ( s_i2s_sck_in                ),
-        .i2s_slave_sck_i            ( s_i2s_sck0_out              ),
-        .i2s_slave_sck_oe           ( s_i2s_slave_sck_oe          ),
+        // .i2s_slave_sd0_o            ( s_i2s_sd0_in                ),
+        // .i2s_slave_sd1_o            ( s_i2s_sd1_in                ),
+        // .i2s_slave_ws_o             ( s_i2s_ws_in                 ),
+        // .i2s_slave_ws_i             ( s_i2s_ws0_out               ),
+        // .i2s_slave_ws_oe            ( s_i2s_slave_ws_oe           ),
+        // .i2s_slave_sck_o            ( s_i2s_sck_in                ),
+        // .i2s_slave_sck_i            ( s_i2s_sck0_out              ),
+        // .i2s_slave_sck_oe           ( s_i2s_slave_sck_oe          ),
 
         .spi_clk_i                  ( s_spi_clk                   ),
         .spi_csn_i                  ( s_spi_csn                   ),
@@ -626,10 +626,10 @@ module pulpissimo #(
 
         .out_i2c0_sda_o             ( s_out_i2c0_sda              ),
         .out_i2c0_scl_o             ( s_out_i2c0_scl              ),
-        .out_i2s0_sck_o             ( s_out_i2s0_sck              ),
-        .out_i2s0_ws_o              ( s_out_i2s0_ws               ),
-        .out_i2s0_sdi_o             ( s_out_i2s0_sdi              ),
-        .out_i2s1_sdi_o             ( s_out_i2s1_sdi              ),
+        // .out_i2s0_sck_o             ( s_out_i2s0_sck              ),
+        // .out_i2s0_ws_o              ( s_out_i2s0_ws               ),
+        // .out_i2s0_sdi_o             ( s_out_i2s0_sdi              ),
+        // .out_i2s1_sdi_o             ( s_out_i2s1_sdi              ),
 
         .in_spim_sdio0_i            ( s_in_spim_sdio0             ),
         .in_spim_sdio1_i            ( s_in_spim_sdio1             ),
@@ -662,10 +662,10 @@ module pulpissimo #(
 
         .in_i2c0_sda_i              ( s_in_i2c0_sda               ),
         .in_i2c0_scl_i              ( s_in_i2c0_scl               ),
-        .in_i2s0_sck_i              ( s_in_i2s0_sck               ),
-        .in_i2s0_ws_i               ( s_in_i2s0_ws                ),
-        .in_i2s0_sdi_i              ( s_in_i2s0_sdi               ),
-        .in_i2s1_sdi_i              ( s_in_i2s1_sdi               ),
+        // .in_i2s0_sck_i              ( s_in_i2s0_sck               ),
+        // .in_i2s0_ws_i               ( s_in_i2s0_ws                ),
+        // .in_i2s0_sdi_i              ( s_in_i2s0_sdi               ),
+        // .in_i2s1_sdi_i              ( s_in_i2s1_sdi               ),
 
         .oe_spim_sdio0_o            ( s_oe_spim_sdio0             ),
         .oe_spim_sdio1_o            ( s_oe_spim_sdio1             ),
@@ -698,10 +698,10 @@ module pulpissimo #(
 
         .oe_i2c0_sda_o              ( s_oe_i2c0_sda               ),
         .oe_i2c0_scl_o              ( s_oe_i2c0_scl               ),
-        .oe_i2s0_sck_o              ( s_oe_i2s0_sck               ),
-        .oe_i2s0_ws_o               ( s_oe_i2s0_ws                ),
-        .oe_i2s0_sdi_o              ( s_oe_i2s0_sdi               ),
-        .oe_i2s1_sdi_o              ( s_oe_i2s1_sdi               ),
+        // .oe_i2s0_sck_o              ( s_oe_i2s0_sck               ),
+        // .oe_i2s0_ws_o               ( s_oe_i2s0_ws                ),
+        // .oe_i2s0_sdi_o              ( s_oe_i2s0_sdi               ),
+        // .oe_i2s1_sdi_o              ( s_oe_i2s1_sdi               ),
 
         .*);
 
@@ -777,14 +777,14 @@ module pulpissimo #(
         .i2c_sda_o                   ( s_i2c_sda_out      ),
         .i2c_sda_oe_o                ( s_i2c_sda_oe       ),
 
-        .i2s_slave_sd0_i             ( s_i2s_sd0_in       ),
-        .i2s_slave_sd1_i             ( s_i2s_sd1_in       ),
-        .i2s_slave_ws_i              ( s_i2s_ws_in        ),
-        .i2s_slave_ws_o              ( s_i2s_ws0_out      ),
-        .i2s_slave_ws_oe             ( s_i2s_slave_ws_oe  ),
-        .i2s_slave_sck_i             ( s_i2s_sck_in       ),
-        .i2s_slave_sck_o             ( s_i2s_sck0_out     ),
-        .i2s_slave_sck_oe            ( s_i2s_slave_sck_oe ),
+        // .i2s_slave_sd0_i             ( s_i2s_sd0_in       ),
+        // .i2s_slave_sd1_i             ( s_i2s_sd1_in       ),
+        // .i2s_slave_ws_i              ( s_i2s_ws_in        ),
+        // .i2s_slave_ws_o              ( s_i2s_ws0_out      ),
+        // .i2s_slave_ws_oe             ( s_i2s_slave_ws_oe  ),
+        // .i2s_slave_sck_i             ( s_i2s_sck_in       ),
+        // .i2s_slave_sck_o             ( s_i2s_sck0_out     ),
+        // .i2s_slave_sck_oe            ( s_i2s_slave_sck_oe ),
 
         .spi_clk_o                   ( s_spi_clk          ),
         .spi_csn_o                   ( s_spi_csn          ),

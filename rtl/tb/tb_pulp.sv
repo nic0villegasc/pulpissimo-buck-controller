@@ -576,10 +576,10 @@ module tb_pulp;
       .pad_i2c0_sda       ( w_i2c0_sda         ),
       .pad_i2c0_scl       ( w_i2c0_scl         ),
 
-      .pad_i2s0_sck       ( w_i2s0_sck         ),
-      .pad_i2s0_ws        ( w_i2s0_ws          ),
-      .pad_i2s0_sdi       ( w_i2s0_sdi         ),
-      .pad_i2s1_sdi       ( w_i2s1_sdi         ),
+      // .pad_i2s0_sck       ( w_i2s0_sck         ),
+      // .pad_i2s0_ws        ( w_i2s0_ws          ),
+      // .pad_i2s0_sdi       ( w_i2s0_sdi         ),
+      // .pad_i2s1_sdi       ( w_i2s1_sdi         ),
 
       .pad_reset_n        ( w_rst_n            ),
       .pad_bootsel0        ( w_bootsel[0]      ),

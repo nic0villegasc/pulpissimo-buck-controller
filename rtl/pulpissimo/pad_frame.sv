@@ -40,10 +40,10 @@ module pad_frame
         input logic             oe_spim_csn0_i ,
         input logic             oe_spim_csn1_i ,
         input logic             oe_spim_sck_i ,
-        input logic             oe_i2s0_sck_i ,
-        input logic             oe_i2s0_ws_i ,
-        input logic             oe_i2s0_sdi_i ,
-        input logic             oe_i2s1_sdi_i ,
+        // input logic             oe_i2s0_sck_i ,
+        // input logic             oe_i2s0_ws_i ,
+        // input logic             oe_i2s0_sdi_i ,
+        // input logic             oe_i2s1_sdi_i ,
         input logic             oe_cam_pclk_i ,
         input logic             oe_cam_hsync_i ,
         input logic             oe_cam_data0_i ,
@@ -74,10 +74,10 @@ module pad_frame
         input logic             out_spim_csn0_i ,
         input logic             out_spim_csn1_i ,
         input logic             out_spim_sck_i ,
-        input logic             out_i2s0_sck_i ,
-        input logic             out_i2s0_ws_i ,
-        input logic             out_i2s0_sdi_i ,
-        input logic             out_i2s1_sdi_i ,
+        // input logic             out_i2s0_sck_i ,
+        // input logic             out_i2s0_ws_i ,
+        // input logic             out_i2s0_sdi_i ,
+        // input logic             out_i2s1_sdi_i ,
         input logic             out_cam_pclk_i ,
         input logic             out_cam_hsync_i ,
         input logic             out_cam_data0_i ,
@@ -108,10 +108,10 @@ module pad_frame
         output logic            in_spim_csn0_o ,
         output logic            in_spim_csn1_o ,
         output logic            in_spim_sck_o ,
-        output logic            in_i2s0_sck_o ,
-        output logic            in_i2s0_ws_o ,
-        output logic            in_i2s0_sdi_o ,
-        output logic            in_i2s1_sdi_o ,
+        // output logic            in_i2s0_sck_o ,
+        // output logic            in_i2s0_ws_o ,
+        // output logic            in_i2s0_sdi_o ,
+        // output logic            in_i2s1_sdi_o ,
         output logic            in_cam_pclk_o ,
         output logic            in_cam_hsync_o ,
         output logic            in_cam_data0_o ,
@@ -144,10 +144,10 @@ module pad_frame
         inout wire              pad_spim_csn0 ,
         inout wire              pad_spim_csn1 ,
         inout wire              pad_spim_sck ,
-        inout wire              pad_i2s0_sck ,
-        inout wire              pad_i2s0_ws ,
-        inout wire              pad_i2s0_sdi ,
-        inout wire              pad_i2s1_sdi ,
+        // inout wire              pad_i2s0_sck ,
+        // inout wire              pad_i2s0_ws ,
+        // inout wire              pad_i2s0_sdi ,
+        // inout wire              pad_i2s1_sdi ,
         inout wire              pad_cam_pclk ,
         inout wire              pad_cam_hsync ,
         inout wire              pad_cam_data0 ,
@@ -189,10 +189,10 @@ module pad_frame
     pad_functional_pd padinst_spim_csn1  (.OEN(~oe_spim_csn1_i ), .I(out_spim_csn1_i ), .O(in_spim_csn1_o ), .PAD(pad_spim_csn1 ), .PEN(~pad_cfg_i[5][0] ) );
     pad_functional_pd padinst_spim_csn0  (.OEN(~oe_spim_csn0_i ), .I(out_spim_csn0_i ), .O(in_spim_csn0_o ), .PAD(pad_spim_csn0 ), .PEN(~pad_cfg_i[4][0] ) );
 
-    pad_functional_pd padinst_i2s1_sdi   (.OEN(~oe_i2s1_sdi_i  ), .I(out_i2s1_sdi_i  ), .O(in_i2s1_sdi_o  ), .PAD(pad_i2s1_sdi  ), .PEN(~pad_cfg_i[38][0]) );
-    pad_functional_pd padinst_i2s0_ws    (.OEN(~oe_i2s0_ws_i   ), .I(out_i2s0_ws_i   ), .O(in_i2s0_ws_o   ), .PAD(pad_i2s0_ws   ), .PEN(~pad_cfg_i[36][0]) );
-    pad_functional_pd padinst_i2s0_sdi   (.OEN(~oe_i2s0_sdi_i  ), .I(out_i2s0_sdi_i  ), .O(in_i2s0_sdi_o  ), .PAD(pad_i2s0_sdi  ), .PEN(~pad_cfg_i[37][0]) );
-    pad_functional_pd padinst_i2s0_sck   (.OEN(~oe_i2s0_sck_i  ), .I(out_i2s0_sck_i  ), .O(in_i2s0_sck_o  ), .PAD(pad_i2s0_sck  ), .PEN(~pad_cfg_i[35][0]) );
+    // pad_functional_pd padinst_i2s1_sdi   (.OEN(~oe_i2s1_sdi_i  ), .I(out_i2s1_sdi_i  ), .O(in_i2s1_sdi_o  ), .PAD(pad_i2s1_sdi  ), .PEN(~pad_cfg_i[38][0]) );
+    // pad_functional_pd padinst_i2s0_ws    (.OEN(~oe_i2s0_ws_i   ), .I(out_i2s0_ws_i   ), .O(in_i2s0_ws_o   ), .PAD(pad_i2s0_ws   ), .PEN(~pad_cfg_i[36][0]) );
+    // pad_functional_pd padinst_i2s0_sdi   (.OEN(~oe_i2s0_sdi_i  ), .I(out_i2s0_sdi_i  ), .O(in_i2s0_sdi_o  ), .PAD(pad_i2s0_sdi  ), .PEN(~pad_cfg_i[37][0]) );
+    // pad_functional_pd padinst_i2s0_sck   (.OEN(~oe_i2s0_sck_i  ), .I(out_i2s0_sck_i  ), .O(in_i2s0_sck_o  ), .PAD(pad_i2s0_sck  ), .PEN(~pad_cfg_i[35][0]) );
 
 
     pad_functional_pd padinst_cam_pclk   (.OEN(~oe_cam_pclk_i  ), .I(out_cam_pclk_i  ), .O(in_cam_pclk_o  ), .PAD(pad_cam_pclk  ), .PEN(~pad_cfg_i[9][0] ) );

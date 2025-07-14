@@ -19,9 +19,9 @@
 #
 
 pulp_soc:
-  commit: v3.0.0
+  commit: main
   server: https://github.com
-  group:  pulp-platform
+  group:  nic0villegasc
 
 tbtools:
   commit: v0.2.1
