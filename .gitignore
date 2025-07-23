@@ -1,3 +1,36 @@
+# PULP & Dependencies
+/ips/
+/ipstools/
+#/pulp-runtime/
+/pulp-sdk/
+
+# Python
+/pulp_venv/
+__pycache__/
+*.pyc
+
+# Build artifacts and caches
+/build/
+/install/
+.cached_ipdb.json
+
+# Simulation & Synthesis Tool Files
+*.log
+*.vcd
+*.vcd.gz
+*.wlf
+*.fsdb
+*.vpd
+
+# Emacs & Code Tagging
+.flycheck-work/
+GPATH
+GRTAGS
+GTAGS
+TAGS
+*~
+#*#
+
 modelsim.ini
 xcelium.d/
 xrun.history
