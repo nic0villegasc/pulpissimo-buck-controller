@@ -63,7 +63,7 @@ module pulpissimo #(
   inout wire pad_jtag_tms,
   inout wire pad_jtag_trst,
 
-  inout wire pad_xtal_in
+  inout wire pad_clk_in
 );
 
   localparam AXI_ADDR_WIDTH             = 32;
