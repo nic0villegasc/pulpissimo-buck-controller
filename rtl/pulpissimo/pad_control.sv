@@ -16,7 +16,7 @@
 module pad_control #(
     parameter int unsigned N_UART = 1,
     parameter int unsigned N_SPI = 1,
-    parameter int unsigned N_I2C = 2
+    parameter int unsigned N_I2C = 1
 ) (
 
         //********************************************************************//
@@ -73,8 +73,8 @@ module pad_control #(
         output logic             out_spim_sck_o   ,
         output logic             out_uart_rx_o    ,
         output logic             out_uart_tx_o    ,
-        // output logic             out_i2c0_sda_o   ,
-        // output logic             out_i2c0_scl_o   ,
+        output logic             out_i2c0_sda_o   ,
+        output logic             out_i2c0_scl_o   ,
 
         // PAD INPUTS
         input logic              in_spim_sdio0_i  ,
