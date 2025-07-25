@@ -548,11 +548,11 @@ module tb_pulp;
       .pad_spim_sdio2     ( w_spi_master_sdio2 ),
       .pad_spim_sdio3     ( w_spi_master_sdio3 ),
       .pad_spim_csn0      ( w_spi_master_csn0  ),
-      .pad_spim_csn1      ( w_spi_master_csn1  ),
+      // .pad_spim_csn1      ( w_spi_master_csn1  ),
       .pad_spim_sck       ( w_spi_master_sck   ),
 
-      .pad_uart_rx        ( w_uart_tx          ),
-      .pad_uart_tx        ( w_uart_rx          ),
+      // .pad_uart_rx        ( w_uart_tx          ),
+      // .pad_uart_tx        ( w_uart_rx          ),
 
       // .pad_cam_pclk       ( w_cam_pclk         ),
       // .pad_cam_hsync      ( w_cam_hsync        ),
@@ -573,8 +573,8 @@ module tb_pulp;
       // .pad_sdio_data2     (                    ),
       // .pad_sdio_data3     (                    ),
 
-      .pad_i2c0_sda       ( w_i2c0_sda         ),
-      .pad_i2c0_scl       ( w_i2c0_scl         ),
+      // .pad_i2c0_sda       ( w_i2c0_sda         ),
+      // .pad_i2c0_scl       ( w_i2c0_scl         ),
 
       // .pad_i2s0_sck       ( w_i2s0_sck         ),
       // .pad_i2s0_ws        ( w_i2s0_ws          ),
