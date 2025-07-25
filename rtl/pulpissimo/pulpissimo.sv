@@ -522,7 +522,7 @@ module pulpissimo #(
     .pad_jtag_tdo          ( pad_jtag_tdo           ),
     .pad_jtag_tms          ( pad_jtag_tms           ),
     .pad_jtag_trst         ( pad_jtag_trst          ),
-    .pad_xtal_in           ( pad_xtal_in            )
+    .pad_xtal_in           ( pad_clk_in            )
   );
 
   //
