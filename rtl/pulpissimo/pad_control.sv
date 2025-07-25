@@ -225,32 +225,32 @@ module pad_control #(
    // assign i2s_slave_sd1_o  = (pad_mux_i[29] == 2'b00) ? in_i2s1_sdi_i : (pad_mux_i[27] == 2'b11) ? in_i2s1_sdi_i : 1'b0;
 
    //    UART
-   assign uart_rx_o     = (pad_mux_i[38] == 2'b00) ? in_uart_rx_i : 1'b1;
+   assign uart_rx_o     = (pad_mux_i[38] == 2'b00) ? in_spim_sdio3_i : 1'b1;
 
+   //    SPI
    assign spi_sdi_o[0][0] = (pad_mux_i[33] == 2'b00) ? in_spim_sdio0_i : 1'b0;
    assign spi_sdi_o[0][1] = (pad_mux_i[34] == 2'b00) ? in_spim_sdio1_i : 1'b0;
    assign spi_sdi_o[0][2] = (pad_mux_i[35] == 2'b00) ? in_spim_sdio2_i : 1'b0;
    assign spi_sdi_o[0][3] = (pad_mux_i[36] == 2'b00) ? in_spim_sdio3_i : 1'b0;
 
    //    I2C0
-   assign i2c_sda_in_o[0]      = (pad_mux_i[43] == 2'b00) ? in_i2c0_sda_i : 1'b1;
-   assign i2c_scl_in_o[0]      = (pad_mux_i[44] == 2'b00) ? in_i2c0_scl_i : 1'b1;
-
+   assign i2c_sda_in_o[0]      = (pad_mux_i[43] == 2'b00) ? in_spim_sdio0_i : 1'b1;
+   assign i2c_scl_in_o[0]      = (pad_mux_i[44] == 2'b00) ? in_spim_sdio1_i : 1'b1;
 
    // assign i2s_slave_sck_o       = (pad_mux_i[45] == 2'b00) ? in_i2s0_sck_i : 1'b0;
    // assign i2s_slave_ws_o        = (pad_mux_i[46] == 2'b00) ? in_i2s0_ws_i  : 1'b0;
    // assign i2s_slave_sd0_o       = (pad_mux_i[47] == 2'b00) ? in_i2s0_sdi_i : 1'b0;
 
    //    GPIO
-   assign gpio_in_o[0]  = (pad_mux_i[0]  == 2'b01) ? in_spim_sdio0_i : 1'b0 ;
-   assign gpio_in_o[1]  = (pad_mux_i[1]  == 2'b01) ? in_spim_sdio1_i : 1'b0 ;
-   assign gpio_in_o[2]  = (pad_mux_i[2]  == 2'b01) ? in_spim_sdio2_i : 1'b0 ;
-   assign gpio_in_o[3]  = (pad_mux_i[3]  == 2'b01) ? in_spim_sdio3_i : 1'b0 ;
-   assign gpio_in_o[4]  = (pad_mux_i[4]  == 2'b01) ? in_spim_csn0_i  : 1'b0 ;
-   assign gpio_in_o[5]  = (pad_mux_i[5]  == 2'b01) ? in_spim_csn1_i  : 1'b0 ;
-   assign gpio_in_o[6]  = (pad_mux_i[6]  == 2'b01) ? in_spim_sck_i   : 1'b0 ;
-   assign gpio_in_o[7]  = (pad_mux_i[7]  == 2'b01) ? in_uart_rx_i    : 1'b0 ;
-   assign gpio_in_o[8]  = (pad_mux_i[8]  == 2'b01) ? in_uart_tx_i    : 1'b0 ;
+   assign gpio_in_o[0]  = (pad_mux_i[0]  == 2'b01) ? in_spim_sck_i : 1'b0 ;
+   assign gpio_in_o[1]  = (pad_mux_i[1]  == 2'b01) ? in_spim_csn0_i : 1'b0 ;
+   // assign gpio_in_o[2]  = (pad_mux_i[2]  == 2'b01) ? in_spim_sdio2_i : 1'b0 ;
+   // assign gpio_in_o[3]  = (pad_mux_i[3]  == 2'b01) ? in_spim_sdio3_i : 1'b0 ;
+   // assign gpio_in_o[4]  = (pad_mux_i[4]  == 2'b01) ? in_spim_csn0_i  : 1'b0 ;
+   // assign gpio_in_o[5]  = (pad_mux_i[5]  == 2'b01) ? in_spim_csn1_i  : 1'b0 ;
+   // assign gpio_in_o[6]  = (pad_mux_i[6]  == 2'b01) ? in_spim_sck_i   : 1'b0 ;
+   // assign gpio_in_o[7]  = (pad_mux_i[7]  == 2'b01) ? in_uart_rx_i    : 1'b0 ;
+   // assign gpio_in_o[8]  = (pad_mux_i[8]  == 2'b01) ? in_uart_tx_i    : 1'b0 ;
    // assign gpio_in_o[9]  = (pad_mux_i[9]  == 2'b01) ? in_cam_pclk_i   : 1'b0 ;
    // assign gpio_in_o[10] = (pad_mux_i[10] == 2'b01) ? in_cam_hsync_i  : 1'b0 ;
    // assign gpio_in_o[11] = (pad_mux_i[11] == 2'b01) ? in_cam_data0_i  : 1'b0 ;
@@ -268,8 +268,8 @@ module pad_control #(
    // assign gpio_in_o[23] = (pad_mux_i[23] == 2'b01) ? in_sdio_data1_i : 1'b0 ;
    // assign gpio_in_o[24] = (pad_mux_i[24] == 2'b01) ? in_sdio_data2_i : 1'b0 ;
    // assign gpio_in_o[25] = (pad_mux_i[25] == 2'b01) ? in_sdio_data3_i : 1'b0 ;
-   assign gpio_in_o[26] = (pad_mux_i[33] == 2'b01) ? in_i2c0_sda_i   : 1'b0 ;
-   assign gpio_in_o[27] = (pad_mux_i[34] == 2'b01) ? in_i2c0_scl_i   : 1'b0 ;
+   // assign gpio_in_o[26] = (pad_mux_i[33] == 2'b01) ? in_i2c0_sda_i   : 1'b0 ;
+   // assign gpio_in_o[27] = (pad_mux_i[34] == 2'b01) ? in_i2c0_scl_i   : 1'b0 ;
    // assign gpio_in_o[28] = (pad_mux_i[35] == 2'b01) ? in_i2s0_sck_i   : 1'b0 ;
    // assign gpio_in_o[29] = (pad_mux_i[36] == 2'b01) ? in_i2s0_ws_i    : 1'b0 ;
    // assign gpio_in_o[30] = (pad_mux_i[37] == 2'b01) ? in_i2s0_sdi_i   : 1'b0 ;
