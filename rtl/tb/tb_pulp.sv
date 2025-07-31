@@ -407,7 +407,7 @@ module tb_pulp;
          .BAUD_RATE ( BAUDRATE   ),
          .PARITY_EN ( 0          )
       ) i_rx_mod (
-         .rx        ( w_uart_rx       ),
+         .rx        ( w_spi_master_sdio2       ),
          .rx_en     ( uart_tb_rx_en ),
          .word_done (               )
       );
