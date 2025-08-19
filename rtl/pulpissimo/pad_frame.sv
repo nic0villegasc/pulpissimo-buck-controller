@@ -55,10 +55,10 @@ module pad_frame
         // input logic             oe_cam_data6_i ,
         // input logic             oe_cam_data7_i ,
         // input logic             oe_cam_vsync_i ,
-        input logic             oe_i2c0_sda_i ,
-        input logic             oe_i2c0_scl_i ,
-        input logic             oe_uart_rx_i ,
-        input logic             oe_uart_tx_i ,
+        // input logic             oe_i2c0_sda_i ,
+        // input logic             oe_i2c0_scl_i ,
+        // input logic             oe_uart_rx_i ,
+        // input logic             oe_uart_tx_i ,
 
         // INPUTS SIGNALS TO THE PADS
         // input logic             out_sdio_clk_i ,
@@ -89,10 +89,10 @@ module pad_frame
         // input logic             out_cam_data6_i ,
         // input logic             out_cam_data7_i ,
         // input logic             out_cam_vsync_i ,
-        input logic             out_i2c0_sda_i ,
-        input logic             out_i2c0_scl_i ,
-        input logic             out_uart_rx_i ,
-        input logic             out_uart_tx_i ,
+        // input logic             out_i2c0_sda_i ,
+        // input logic             out_i2c0_scl_i ,
+        // input logic             out_uart_rx_i ,
+        // input logic             out_uart_tx_i ,
 
         // OUTPUT SIGNALS FROM THE PADS
         // output logic            in_sdio_clk_o ,
@@ -123,10 +123,10 @@ module pad_frame
         // output logic            in_cam_data6_o ,
         // output logic            in_cam_data7_o ,
         // output logic            in_cam_vsync_o ,
-        output logic            in_i2c0_sda_o ,
-        output logic            in_i2c0_scl_o ,
-        output logic            in_uart_rx_o ,
-        output logic            in_uart_tx_o ,
+        // output logic            in_i2c0_sda_o ,
+        // output logic            in_i2c0_scl_o ,
+        // output logic            in_uart_rx_o ,
+        // output logic            in_uart_tx_o ,
 
         output logic [1:0]      bootsel_o ,
 
@@ -149,36 +149,25 @@ module pad_frame
         inout wire              pad_xtal_in
     );
 
-    pad_functional_pd padinst_spim_sck   (.OEN(~oe_spim_sck_i  ), .I(out_spim_sck_i  ), .O(in_spim_sck_o  ), .PAD(pad_spim_sck  ), .PEN(~pad_cfg_i[6][0] ) );
-    pad_functional_pd padinst_spim_sdio0 (.OEN(~oe_spim_sdio0_i), .I(out_spim_sdio0_i), .O(in_spim_sdio0_o), .PAD(pad_spim_sdio0), .PEN(~pad_cfg_i[0][0] ) );
-    pad_functional_pd padinst_spim_sdio1 (.OEN(~oe_spim_sdio1_i), .I(out_spim_sdio1_i), .O(in_spim_sdio1_o), .PAD(pad_spim_sdio1), .PEN(~pad_cfg_i[1][0] ) );
-    pad_functional_pd padinst_spim_sdio2 (.OEN(~oe_spim_sdio2_i), .I(out_spim_sdio2_i), .O(in_spim_sdio2_o), .PAD(pad_spim_sdio2), .PEN(~pad_cfg_i[2][0] ) );
-    pad_functional_pd padinst_spim_sdio3 (.OEN(~oe_spim_sdio3_i), .I(out_spim_sdio3_i), .O(in_spim_sdio3_o), .PAD(pad_spim_sdio3), .PEN(~pad_cfg_i[3][0] ) );
-    pad_functional_pd padinst_spim_csn0  (.OEN(~oe_spim_csn0_i ), .I(out_spim_csn0_i ), .O(in_spim_csn0_o ), .PAD(pad_spim_csn0 ), .PEN(~pad_cfg_i[4][0] ) );
+   gf180mcu_fd_io__bi_t padinst_spim_sck_gf180 ( .A(out_spim_sck_i), .Y(in_spim_sck_o), .OE(~oe_spim_sck_i), .IE(oe_spim_sck_i), .PAD(pad_spim_sck), .PD(~pad_cfg_i[6][0]), .PU(1'b0), .CS(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
+   gf180mcu_fd_io__bi_t padinst_spim_sdio0_gf180 ( .A(out_spim_sdio0_i), .Y(in_spim_sdio0_o), .OE(~oe_spim_sdio0_i), .IE(oe_spim_sdio0_i), .PAD(pad_spim_sdio0), .PD(~pad_cfg_i[0][0]), .PU(1'b0), .CS(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
+   gf180mcu_fd_io__bi_t padinst_spim_sdio1_gf180 ( .A(out_spim_sdio1_i), .Y(in_spim_sdio1_o), .OE(~oe_spim_sdio1_i), .IE(oe_spim_sdio1_i), .PAD(pad_spim_sdio1), .PD(~pad_cfg_i[1][0]), .PU(1'b0), .CS(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
+   gf180mcu_fd_io__bi_t padinst_spim_sdio2_gf180 ( .A(out_spim_sdio2_i), .Y(in_spim_sdio2_o), .OE(~oe_spim_sdio2_i), .IE(oe_spim_sdio2_i), .PAD(pad_spim_sdio2), .PD(~pad_cfg_i[2][0]), .PU(1'b0), .CS(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
+   gf180mcu_fd_io__bi_t padinst_spim_sdio3_gf180 ( .A(out_spim_sdio3_i), .Y(in_spim_sdio3_o), .OE(~oe_spim_sdio3_i), .IE(oe_spim_sdio3_i), .PAD(pad_spim_sdio3), .PD(~pad_cfg_i[3][0]), .PU(1'b0), .CS(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
+   gf180mcu_fd_io__bi_t padinst_spim_csn0_gf180 ( .A(out_spim_csn0_i), .Y(in_spim_csn0_o), .OE(~oe_spim_csn0_i), .IE(oe_spim_csn0_i), .PAD(pad_spim_csn0), .PD(~pad_cfg_i[4][0]), .PU(1'b0), .CS(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
 
+   gf180mcu_fd_io__in_c padinst_bootsel0_gf180 ( .Y(bootsel_o[0]), .PAD(pad_bootsel0), .PU(1'b1), .PD(1'b0) );
+   gf180mcu_fd_io__in_c padinst_bootsel1_gf180 ( .Y(bootsel_o[1]), .PAD(pad_bootsel1), .PU(1'b1), .PD(1'b0) );
 
-    pad_functional_pu padinst_bootsel0    (.OEN(1'b1            ), .I(                ), .O(bootsel_o[0]      ), .PAD(pad_bootsel0   ), .PEN(1'b1             ) );
-    pad_functional_pu padinst_bootsel1    (.OEN(1'b1            ), .I(                ), .O(bootsel_o[1]      ), .PAD(pad_bootsel1   ), .PEN(1'b1             ) );
-
-
-`ifndef PULP_FPGA_EMUL
-  pad_functional_pu padinst_ref_clk    (.OEN(1'b1            ), .I(                ), .O(ref_clk_o      ), .PAD(pad_xtal_in   ), .PEN(1'b1             ) );
-  pad_functional_pu padinst_reset_n    (.OEN(1'b1            ), .I(                ), .O(rstn_o         ), .PAD(pad_reset_n   ), .PEN(1'b1             ) );
-  pad_functional_pu padinst_jtag_tck   (.OEN(1'b1            ), .I(                ), .O(jtag_tck_o     ), .PAD(pad_jtag_tck  ), .PEN(1'b1             ) );
-  pad_functional_pu padinst_jtag_tms   (.OEN(1'b1            ), .I(                ), .O(jtag_tms_o     ), .PAD(pad_jtag_tms  ), .PEN(1'b1             ) );
-  pad_functional_pu padinst_jtag_tdi   (.OEN(1'b1            ), .I(                ), .O(jtag_tdi_o     ), .PAD(pad_jtag_tdi  ), .PEN(1'b1             ) );
-  pad_functional_pu padinst_jtag_trstn (.OEN(1'b1            ), .I(                ), .O(jtag_trst_o    ), .PAD(pad_jtag_trst ), .PEN(1'b1             ) );
-  pad_functional_pd padinst_jtag_tdo   (.OEN(1'b0            ), .I(jtag_tdo_i      ), .O(               ), .PAD(pad_jtag_tdo  ), .PEN(1'b1             ) );
-`else
-  assign ref_clk_o = pad_xtal_in;
-  assign rstn_o = pad_reset_n;
+   gf180mcu_fd_io__in_c padinst_reset_n_gf180 ( .Y(rstn_o), .PAD(pad_reset_n), .PU(1'b1), .PD(1'b0) );
+   gf180mcu_fd_io__in_c padinst_clk_ref_gf180 ( .Y(ref_clk_o), .PAD(pad_xtal_in), .PU(1'b0), .PD(1'b0) );
 
   //JTAG signals
-  assign pad_jtag_tdo = jtag_tdo_i;
-  assign jtag_trst_o = pad_jtag_trst;
-  assign jtag_tms_o = pad_jtag_tms;
-  assign jtag_tck_o = pad_jtag_tck;
-  assign jtag_tdi_o = pad_jtag_tdi;
-`endif
+   gf180mcu_fd_io__in_c padinst_jtag_trst_gf180( .Y(jtag_trst_o), .PAD(pad_jtag_trst), .PU(1'b0), .PD(1'b0) );
+   gf180mcu_fd_io__in_c padinst_jtag_tms_gf180 ( .Y(jtag_tms_o),  .PAD(pad_jtag_tms),  .PU(1'b0), .PD(1'b0) );
+   gf180mcu_fd_io__in_c padinst_jtag_tck_gf180 ( .Y(jtag_tck_o),  .PAD(pad_jtag_tck),  .PU(1'b0), .PD(1'b0) );
+   gf180mcu_fd_io__in_c padinst_jtag_tdi_gf180 ( .Y(jtag_tdi_o),  .PAD(pad_jtag_tdi),  .PU(1'b0), .PD(1'b0) );
+
+   gf180mcu_fd_io__bi_t padinst_jtag_tdo_gf180 ( .A(jtag_tdo_i), .PAD(pad_jtag_tdo), .OE(1'b1), .IE(1'b0), .Y(), .CS(1'b0), .PD(1'b0), .PU(1'b0), .SL(1'b0), .PDRV0(1'b0), .PDRV1(1'b0) );
 
 endmodule // pad_frame

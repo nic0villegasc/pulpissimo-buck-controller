@@ -15,24 +15,25 @@ module pulpissimo #(
     parameter USE_FPU     = 1,
     parameter USE_HWPE    = 0
 ) (
-  inout wire                          pad_spim_sdio0,
-  inout wire                          pad_spim_sdio1,
-  inout wire                          pad_spim_sdio2,
-  inout wire                          pad_spim_sdio3,
-  inout wire                          pad_spim_csn0,
-  inout wire                          pad_spim_sck,
+  inout      PAD_DOUT_1,
+  inout      PAD_DOUT_2,
+  inout      PAD_DOUT_3,
+  inout      PAD_DOUT_4,
+  inout      PAD_DOUT_5,
+  inout      PAD_DOUT_6,
 
-  (* mark_debug="true" *)  inout wire pad_reset_n,
-  inout wire                          pad_bootsel0,
-  inout wire                          pad_bootsel1,
+  input wire DIN_1,
+  input wire DIN_2,
 
-  inout wire                          pad_jtag_tck,
-  inout wire                          pad_jtag_tdi,
-  inout wire                          pad_jtag_tdo,
-  inout wire                          pad_jtag_tms,
-  inout wire                          pad_jtag_trst,
+  inout wire DIN_3,
+  inout wire DIN_4,
 
-  (* mark_debug="true" *)inout wire   pad_xtal_in
+  inout wire DIN_5,
+  inout wire DIN_6,
+  inout wire DIN_7,
+  inout wire DIN_8,
+
+  inout      PAD_DOUT_7
 );
 
   localparam AXI_ADDR_WIDTH             = 32;
@@ -273,22 +274,24 @@ module pulpissimo #(
     .bootsel_o             ( s_bootsel              ),
 
     //EXT CHIP to PAD
-    .pad_spim_sdio0        ( pad_spim_sdio0         ),
-    .pad_spim_sdio1        ( pad_spim_sdio1         ),
-    .pad_spim_sdio2        ( pad_spim_sdio2         ),
-    .pad_spim_sdio3        ( pad_spim_sdio3         ),
-    .pad_spim_csn0         ( pad_spim_csn0          ),
-    .pad_spim_sck          ( pad_spim_sck           ),
+    .pad_spim_sdio0        ( PAD_DOUT_1             ),
+    .pad_spim_sdio1        ( PAD_DOUT_2             ),
+    .pad_spim_sdio2        ( PAD_DOUT_3             ),
+    .pad_spim_sdio3        ( PAD_DOUT_4             ),
+    .pad_spim_csn0         ( PAD_DOUT_5             ),
+    .pad_spim_sck          ( PAD_DOUT_6             ),
 
-    .pad_bootsel0          ( pad_bootsel0            ),
-    .pad_bootsel1          ( pad_bootsel1            ),
-    .pad_reset_n           ( pad_reset_n            ),
-    .pad_jtag_tck          ( pad_jtag_tck           ),
-    .pad_jtag_tdi          ( pad_jtag_tdi           ),
-    .pad_jtag_tdo          ( pad_jtag_tdo           ),
-    .pad_jtag_tms          ( pad_jtag_tms           ),
-    .pad_jtag_trst         ( pad_jtag_trst          ),
-    .pad_xtal_in           ( pad_xtal_in            )
+    .pad_bootsel0          ( DIN_1                  ),
+    .pad_bootsel1          ( DIN_2                  ),
+
+    .pad_reset_n           ( DIN_3                  ),
+    .pad_xtal_in           ( DIN_4                  ),
+
+    .pad_jtag_tck          ( DIN_5                  ),
+    .pad_jtag_tdi          ( DIN_6                  ),
+    .pad_jtag_tdo          ( PAD_DOUT_7             ),
+    .pad_jtag_tms          ( DIN_7                  ),
+    .pad_jtag_trst         ( DIN_8                  )
   );
 
   //
