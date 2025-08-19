@@ -591,7 +591,7 @@ module tb_pulp;
       .pad_jtag_tms       ( w_tms              ),
       .pad_jtag_trst      ( w_trstn            ),
 
-      .pad_clk_in        ( w_clk_ref          )
+      .pad_xtal_in        ( w_clk_ref          )
    );
 
    tb_clk_gen #( .CLK_PERIOD(REF_CLK_PERIOD) ) i_ref_clk_gen (.clk_o(s_clk_ref) );

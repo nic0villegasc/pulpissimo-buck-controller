@@ -146,7 +146,7 @@ module pad_frame
         inout wire              pad_jtag_tdo ,
         inout wire              pad_jtag_tms ,
         inout wire              pad_jtag_trst ,
-        inout wire              pad_clk_in
+        inout wire              pad_xtal_in
     );
 
     pad_functional_pd padinst_spim_sck   (.OEN(~oe_spim_sck_i  ), .I(out_spim_sck_i  ), .O(in_spim_sck_o  ), .PAD(pad_spim_sck  ), .PEN(~pad_cfg_i[6][0] ) );
@@ -162,7 +162,7 @@ module pad_frame
 
 
 `ifndef PULP_FPGA_EMUL
-  pad_functional_pu padinst_ref_clk    (.OEN(1'b1            ), .I(                ), .O(ref_clk_o      ), .PAD(pad_clk_in   ), .PEN(1'b1             ) );
+  pad_functional_pu padinst_ref_clk    (.OEN(1'b1            ), .I(                ), .O(ref_clk_o      ), .PAD(pad_xtal_in   ), .PEN(1'b1             ) );
   pad_functional_pu padinst_reset_n    (.OEN(1'b1            ), .I(                ), .O(rstn_o         ), .PAD(pad_reset_n   ), .PEN(1'b1             ) );
   pad_functional_pu padinst_jtag_tck   (.OEN(1'b1            ), .I(                ), .O(jtag_tck_o     ), .PAD(pad_jtag_tck  ), .PEN(1'b1             ) );
   pad_functional_pu padinst_jtag_tms   (.OEN(1'b1            ), .I(                ), .O(jtag_tms_o     ), .PAD(pad_jtag_tms  ), .PEN(1'b1             ) );
@@ -170,7 +170,7 @@ module pad_frame
   pad_functional_pu padinst_jtag_trstn (.OEN(1'b1            ), .I(                ), .O(jtag_trst_o    ), .PAD(pad_jtag_trst ), .PEN(1'b1             ) );
   pad_functional_pd padinst_jtag_tdo   (.OEN(1'b0            ), .I(jtag_tdo_i      ), .O(               ), .PAD(pad_jtag_tdo  ), .PEN(1'b1             ) );
 `else
-  assign ref_clk_o = pad_clk_in;
+  assign ref_clk_o = pad_xtal_in;
   assign rstn_o = pad_reset_n;
 
   //JTAG signals
