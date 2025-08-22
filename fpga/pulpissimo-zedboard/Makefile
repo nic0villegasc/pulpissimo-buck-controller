@@ -8,7 +8,7 @@ VIVADO ?= vivado
 .PHONY: help all gui ips clean-ips clk clean-clk clean
 
 #Make sure BENDER environment variable is available for subprocesses in Make
-export BENDER
+#export BENDER
 
 all: ips ## Generate the bitstream for pulpissimo with vivado in batch mode. The vivado invocation command may be overriden with the env variable VIVADO.
 	$(VIVADO) -mode batch -source tcl/run.tcl

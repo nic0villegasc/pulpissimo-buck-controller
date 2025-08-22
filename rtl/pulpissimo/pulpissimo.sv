@@ -15,24 +15,24 @@ module pulpissimo #(
     parameter USE_FPU     = 1,
     parameter USE_HWPE    = 0
 ) (
-  inout wire pad_spim_sdio0,
-  inout wire pad_spim_sdio1,
-  inout wire pad_spim_sdio2,
-  inout wire pad_spim_sdio3,
-  inout wire pad_spim_csn0,
-  inout wire pad_spim_sck,
+  inout wire                          pad_spim_sdio0,
+  inout wire                          pad_spim_sdio1,
+  inout wire                          pad_spim_sdio2,
+  inout wire                          pad_spim_sdio3,
+  inout wire                          pad_spim_csn0,
+  inout wire                          pad_spim_sck,
 
-  inout wire pad_reset_n,
-  inout wire pad_bootsel0,
-  inout wire pad_bootsel1,
+  (* mark_debug="true" *)  inout wire pad_reset_n,
+  inout wire                          pad_bootsel0,
+  inout wire                          pad_bootsel1,
 
-  inout wire pad_jtag_tck,
-  inout wire pad_jtag_tdi,
-  inout wire pad_jtag_tdo,
-  inout wire pad_jtag_tms,
-  inout wire pad_jtag_trst,
+  inout wire                          pad_jtag_tck,
+  inout wire                          pad_jtag_tdi,
+  inout wire                          pad_jtag_tdo,
+  inout wire                          pad_jtag_tms,
+  inout wire                          pad_jtag_trst,
 
-  inout wire pad_clk_in
+  (* mark_debug="true" *)inout wire   pad_xtal_in
 );
 
   localparam AXI_ADDR_WIDTH             = 32;
@@ -196,7 +196,7 @@ module pulpissimo #(
   // accordingly if you change these.
   localparam int unsigned N_UART = 1;
   localparam int unsigned N_SPI = 1;
-  localparam int unsigned N_I2C = 2;
+  localparam int unsigned N_I2C = 1;
 
   logic [N_SPI-1:0]            s_spi_clk;
   logic [N_SPI-1:0][3:0]       s_spi_csn;
@@ -288,7 +288,7 @@ module pulpissimo #(
     .pad_jtag_tdo          ( pad_jtag_tdo           ),
     .pad_jtag_tms          ( pad_jtag_tms           ),
     .pad_jtag_trst         ( pad_jtag_trst          ),
-    .pad_clk_in           ( pad_clk_in            )
+    .pad_xtal_in           ( pad_xtal_in            )
   );
 
   //
