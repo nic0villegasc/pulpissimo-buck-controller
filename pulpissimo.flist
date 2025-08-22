@@ -445,7 +445,9 @@
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/interleaved_crossbar.sv
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/tcdm_demux.sv
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/boot_rom.sv
+/foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/generic_rom.sv
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/l2_ram_multi_bank.sv
+/foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/sram_512x32_wrapper.sv
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/lint_jtag_wrap.sv
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/periph_bus_wrap.sv
 /foss/designs/pulpissimo/ips/pulp_soc/rtl/pulp_soc/soc_clk_rst_gen.sv
@@ -481,3 +483,6 @@
 /foss/designs/pulpissimo/rtl/pulpissimo/rtc_date.sv
 /foss/designs/pulpissimo/rtl/pulpissimo/rtc_clock.sv
 /foss/designs/pulpissimo/rtl/pulpissimo/pulpissimo.sv
+/foss/designs/pulpissimo/ips/tech_cells_generic/src/deprecated/pulp_clock_gating_async.sv
+/foss/designs/pulpissimo/ips/tech_cells_generic/src/deprecated/pulp_clk_cells.sv
+/foss/designs/pulpissimo/ips/tech_cells_generic/src/deprecated/cluster_clk_cells.sv
